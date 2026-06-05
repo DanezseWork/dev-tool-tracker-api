@@ -10,6 +10,7 @@ import {
 } from 'typeorm';
 import { UsageLog } from '../../usage-logs/entities/usage-log.entity';
 import { User } from '../../auth/entities/user.entity';
+import { CycleType } from '../enums/cycle-type.enum';
 
 export enum BillingCycle {
   MONTHLY = 'monthly',
@@ -49,6 +50,18 @@ export class Tool {
 
   @Column({ type: 'int', nullable: true })
   billing_reset_day: number;
+
+  @Column({ type: 'enum', enum: CycleType, default: CycleType.MONTHLY })
+  cycle_type: CycleType;
+
+  @Column({ type: 'int', nullable: true })
+  cycle_length_days: number;
+
+  @Column({ type: 'date', nullable: true })
+  cycle_start_date: string;
+
+  @Column({ type: 'time', nullable: true })
+  cycle_reset_time: string;
 
   @Column({ type: 'boolean', default: true })
   is_active: boolean;
