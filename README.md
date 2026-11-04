@@ -2,14 +2,15 @@
 
 A REST API for tracking AI and developer tool usage across billing cycles. Users register their tools, log current usage as a percentage, and get a recommended daily usage pace to stay within their quota before the next billing reset.
 
-**Live API:** https://dev-tool-tracker-api-production.up.railway.app/api/docs
+**Live API:** https://dev-tool-tracker-api.onrender.com/api/docs
 
 ## Stack
 
 - **NestJS** + **TypeScript** — framework
 - **PostgreSQL** + **TypeORM** — database and ORM
 - **JWT** + **Passport** — authentication
-- **Railway** — deployment and managed database
+- **Render** — API hosting
+- **Neon** — Postgres
 - **Swagger / OpenAPI** — auto-generated interactive docs
 
 ## Features
