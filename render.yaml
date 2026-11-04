@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dev-tool-tracker-api
+    runtime: node
+    region: singapore
+    plan: free
+    buildCommand: npm run build
+    startCommand: node dist/main
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_UNPOOLED
+        sync: false
+      - key: JWT_SECRET
+        sync: false
